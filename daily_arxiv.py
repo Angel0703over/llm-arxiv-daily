@@ -214,31 +214,39 @@ def update_paper_links(filename):
         with open(filename,"w") as f:
             json.dump(json_data,f)
 
-def update_json_file(filename,data_dict):
+def update_json_file(filename, data_dict):
     '''
     daily update json file using data_dict
     '''
-    with open(filename,"r") as f:
-        content = f.read()
-        if not content:
-            m = {}
-        else:
-            m = json.loads(content)
+    # 初始化空字典
+    json_data = {}
 
-    json_data = m.copy()
+    # 如果文件存在，尝试读取
+    if os.path.exists(filename):
+        with open(filename, "r", encoding="utf-8") as f:
+            content = f.read().strip()
+            if content:  # 文件非空
+                try:
+                    json_data = json.loads(content)
+                except json.JSONDecodeError:
+                    print(f"⚠️ JSON 文件 {filename} 格式错误，重新初始化为空字典")
+                    json_data = {}
+            else:
+                print(f"ℹ️ JSON 文件 {filename} 为空，初始化为空字典")
+    else:
+        print(f"ℹ️ JSON 文件 {filename} 不存在，将新建")
 
-    # update papers in each keywords
+    # 更新数据
     for data in data_dict:
-        for keyword in data.keys():
-            papers = data[keyword]
-
-            if keyword in json_data.keys():
+        for keyword, papers in data.items():
+            if keyword in json_data:
                 json_data[keyword].update(papers)
             else:
                 json_data[keyword] = papers
 
-    with open(filename,"w") as f:
-        json.dump(json_data,f)
+    # 保存文件
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(json_data, f, indent=2, ensure_ascii=False)
 
 def json_to_md(filename,md_filename,
                task = '',
