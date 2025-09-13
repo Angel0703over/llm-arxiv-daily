@@ -12,18 +12,18 @@ publish_gitpage: True
 publish_wechat: False
 
 # file paths
-json_readme_path: './docs/cv-arxiv-daily.json'
-json_gitpage_path: './docs/cv-arxiv-daily-web.json'
-json_wechat_path: './docs/cv-arxiv-daily-wechat.json'
+json_readme_path: './docs/llm-arxiv-daily.json'
+json_gitpage_path: './docs/llm-arxiv-daily-web.json'
+json_wechat_path: './docs/llm-arxiv-daily-wechat.json'
 
 md_readme_path: 'README.md'
-md_gitpage_path: './docs/index.md'
-md_wechat_path: './docs/wechat.md'
+md_gitpage_path: './docs/index_llm.md'
+md_wechat_path: './docs/wechat_llm.md'
 
 # keywords to search
 keywords:
     # ===== 训练类 =====
-    "Large Language Models":
+    "LLM":
         filters: ["Large Language Model", "LLM", "Language Model", "GPT", "ChatGPT", "LLaMA", "Mistral"]
     "Instruction Tuning":
         filters: ["Instruction Tuning", "Instruction Following", "Alignment", "Supervised Fine-tuning"]
