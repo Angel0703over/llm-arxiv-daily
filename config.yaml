@@ -22,29 +22,6 @@ md_wechat_path: './docs/wechat_llm.md'
 
 # keywords to search
 keywords:
-    # ===== 训练类 =====
     "LLM":
-        filters: ["Large Language Model", "LLM", "Language Model", "GPT", "ChatGPT", "LLaMA", "Mistral"]
-    "Instruction Tuning":
-        filters: ["Instruction Tuning", "Instruction Following", "Alignment", "Supervised Fine-tuning"]
-    "Reinforcement Learning with Human Feedback":
-        filters: ["RLHF", "Reinforcement Learning with Human Feedback", "Preference Optimization"]
-    "Efficient LLM":
-        filters: ["Model Compression", "Quantization", "Pruning", "LoRA", "PEFT", "Parameter-Efficient Fine-tuning"]
-
-    # ===== 推理类 =====
-    "LLM Inference Service":
-        filters: ["LLM Inference", "Model Serving", "Distributed Inference",
-                  "Inference Acceleration", "Continuous Batching",
-                  "Triton Inference Server", "vLLM", "DeepSpeed-MII", "FlashAttention"]
-
-    # ===== 应用类 =====
-    "Retrieval-Augmented Generation":
-        filters: ["RAG", "Retrieval-Augmented Generation", "Knowledge-Augmented Generation"]
-    "Multimodal LLM":
-        filters: ["Multimodal LLM", "Vision Language Model", "VLM", "LVLM", "Multimodal Generation"]
-    "Evaluation":
-        filters: ["LLM Evaluation", "Benchmarking", "Hallucination", "Bias", "Robustness"]
-    "Applications":
-        filters: ["Code Generation", "Reasoning", "Mathematical Reasoning", "Tool Use", "Agent"]
+        filters: ["LLM", "RAG", "Agent", "Inference", "LoRA", "Prompt"]
 
